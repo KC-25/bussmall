@@ -18,6 +18,12 @@ h4{
     display: flex;
     justify-content: center;
 }
+#ads2{
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-bottom: 5%;
+}
 a{
     color:rgba(126, 246, 255, 0.808);
     font-size: xx-large;
@@ -75,7 +81,6 @@ body{
 }
 img{
    
-    margin-bottom: 5%;
     border-radius: 50px;
 }
 #i1{

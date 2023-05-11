@@ -3,7 +3,7 @@
 
 console.log("Hello world");
 
-const imageContainer = document.getElementsByTagName('ads');
+const imageContainer = document.getElementById('ads');
 const i1 = document.getElementById("i1");
 const i2 = document.getElementById("i2");
 const i3 = document.getElementById("i3");
@@ -87,26 +87,83 @@ function getThreeImages(){
     img3.renderImages(T3, i3);
 };
 
+function putArrayInStorage(){
+    let stringArray = JSON.stringify(Image.nameofarray);
+    if(stringArray = []){
+        localStorage.setItem('Image', stringArray);
+    }
+    else(localStorage.setItem('Image', stringArray));
+}
+
+function getArrayFromStorage(){
+    let storedImage = localStorage.getItem('Image');
+    if(storedImage){
+        let newImage = JSON.parse(storedImage);
+        for(let images of newImage ){
+            let myNewImage = new Images(images.name, images.image, images.views, images.clicks);
+            Image.nameofarray.push(myNewImage)
+        }
+    }
+};
+// function graph (){
+
+const ctx = document.getElementById('graph');
+// let imageNames = [];
+// let imageClicks =[];
+// for(let images of Image.nameofarray){
+//     images.push(images.name);
+//     imageClicks.push(image.clicks);
+// }
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: imageClicks,
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+// }
+function removeImages(){
+document.getElementById("i1").style.display = 'none';
+document.getElementById("i2").style.display = 'none';
+document.getElementById("i3").style.display = 'none';
+}
 
 function handleClick(e){
-    var imageClicked = e.target.id;
-    if(imageClicked === 'i1' || imageClicked === 'i2' || imageClicked === 'i3'){
-        imageContainer.views++;
+    let imageClicked = e.target.id;
+    if(imageClicked === 'i1'|| imageClicked === 'i2'|| imageClicked === 'i3'){
         count++;
     }
     if(imageClicked === 'i1'){
-        i1.clicks++;
+        Image.nameofarray[0].clicks++;
     }
     if(imageClicked === 'i2'){
-        i2.clicks++;
+        Image.nameofarray[1].clicks++;
     }
     if(imageClicked === 'i3'){
-        i3.clicks++;
+        Image.nameofarray[2].clicks++;
     }
     getThreeImages();
+    if(count === 25){
+        removeImages();
+        document.write('<h1>The test is over.</h1>');
+        console.log(Image.nameofarray);
+    }
+    putArrayInStorage();
+};
+imageContainer.addEventListener('click', handleClick)
+console.log(Image);
+getArrayFromStorage();
+getThreeImages();
 
-}
-imageContainer.addEventListener ('click', handleClick);
-
-
-
+graph();

@@ -40,7 +40,6 @@ Image.nameofarray.push (new Image('breakfast', './images/breakfast.jpg'));
 Image.nameofarray.push (new Image('dog-duck', './images/dog-duck.jpg'));
 Image.nameofarray.push (new Image('shark', './images/shark.jpg'));
 
-// console.log(Image.nameofarray);
 
 Image.prototype.renderImages = function(name, image){
     image.src = this.image;
@@ -105,34 +104,7 @@ function getArrayFromStorage(){
         }
     }
 };
-// function graph (){
 
-const ctx = document.getElementById('graph');
-// let imageNames = [];
-// let imageClicks =[];
-// for(let images of Image.nameofarray){
-//     images.push(images.name);
-//     imageClicks.push(image.clicks);
-// }
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: imageClicks,
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-// }
 function removeImages(){
 document.getElementById("i1").style.display = 'none';
 document.getElementById("i2").style.display = 'none';
@@ -154,16 +126,18 @@ function handleClick(e){
         Image.nameofarray[2].clicks++;
     }
     getThreeImages();
+
     if(count === 25){
-        removeImages();
-        document.write('<h1>The test is over.</h1>');
+        // removeImages();
+        window.location.href = "results.html";
         console.log(Image.nameofarray);
     }
+    }
     putArrayInStorage();
-};
+
+
 imageContainer.addEventListener('click', handleClick)
 console.log(Image);
 getArrayFromStorage();
 getThreeImages();
 
-graph();

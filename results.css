@@ -1,0 +1,91 @@
+#foot{
+    padding: 3%;
+    padding-left:5%;
+    padding-right:5%;
+    background-color:rgba(5, 56, 127, 0.808);
+    /* border: solid rgba(0, 28, 66, 0.808) 5px;
+    border-radius: 100px; */
+    border: solid rgba(0, 28, 66, 0.808) 5px;
+    margin-left:2%;
+    border-radius: 35px;;
+    margin-right:2%;
+}
+h4{
+    font-size: xxx-large;
+    font-weight: bold;
+}
+#BUTTON{
+    display: flex;
+    justify-content: center;
+}
+#ads2{
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-bottom: 5%;
+}
+a{
+    color:rgba(126, 246, 255, 0.808);
+    font-size: xx-large;
+    text-decoration: none;
+}
+button{
+    border-radius: 50px ;
+    padding: 1%;
+    padding-left:2%;
+    padding-right:2%;
+    background-color: rgba(5, 56, 127, 0.808);
+    border: rgba(0, 28, 66, 0.808) 5px solid;
+    margin-bottom: 4%;
+    font-family: 'Alkatra', cursive;
+}
+p{
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 3%;
+    display: center;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+    font-weight: bold;
+}
+
+header{
+    padding: 3%;
+    border-radius: 35px;;
+    margin-top:2%;
+    padding-left:5%;
+    padding-right:5%;
+    background-color:rgba(5, 56, 127, 0.808);
+    /* border: solid rgba(0, 28, 66, 0.808) 5px;
+    border-radius: 100px; */
+    border: solid rgba(0, 28, 66, 0.808) 5px;
+    margin-bottom: 5%;
+    margin-right:2%;
+    margin-left:2%;
+}
+body{
+    background-color:rgba(121, 140, 207, 0.808);
+    color:rgba(126, 246, 255, 0.808);
+    font-family: 'Alkatra', cursive;
+    font-size: xx-large;
+}
+
+table{
+    display: flex;
+    justify-content: center;
+    border-spacing: 0px;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+td{
+    border:rgba(0, 28, 66, 0.808) solid 2px;
+    text-align: center;
+    background-color: rgba(5, 56, 127, 0.808);
+}
+tr{
+    border:rgba(0, 28, 66, 0.808) solid 2px;
+}
